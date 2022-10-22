@@ -9,7 +9,24 @@
 </head>
 
 <body>
+
+    <!-- FIRST TAG PHP -->
     <?= "Hello World"
+    ?>
+
+    <br>
+
+    <!-- CONDITIONS AND BOOLEAN -->
+    <?php
+    $condition = true;
+    $ternoryCondition = false;
+    if ($condition) {
+        echo "This is if statememnt";
+    } else {
+        echo "This is else statememnt";
+    }
+    echo "<br>";
+    echo $ternoryCondition ? "Ternary Condition is true" : "Ternary Condition is false";
     ?>
 </body>
 
