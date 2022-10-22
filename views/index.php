@@ -53,7 +53,7 @@
     <!-- ASSOCIATIVE ARRAY -->
     <h1>Associative Array</h1>
     <?php
-    $newBooks = [
+    $GLOBALS['newBooks'] = [
         [
             'name' => 'Phy',
             'author' => 'ammar',
@@ -72,14 +72,32 @@
     ];
     ?>
     <ul>
-        <?php foreach ($newBooks as $key => $book) : ?>
+        <?php foreach (filterNewBookByAuthor($newBooks) as $key => $book) : ?>
             <li>
                 <a href="<?= $book['link'] ?>">
-                    <?= $book['name'] ?>
+                    <?= "Booke name is: " . $book['name'] ?> - <?= " By author: " . $book['author'] ?>
                 </a>
             </li>
         <?php endforeach; ?>
     </ul>
+
+    <br>
+
+    <!-- FUNCTIONS AND FILTERING -->
+    <h1>Functions and Filtering</h1>
+    <?php
+    function filterNewBookByAuthor($value)
+    {
+        $filterBooks = [];
+        foreach ($value as $item) {
+            if ($item['author'] == 'ammar') {
+                $filterBooks[] = $item;
+            }
+        }
+        return $filterBooks;
+    }
+    // call in asso array
+    ?>
 </body>
 
 </html>
