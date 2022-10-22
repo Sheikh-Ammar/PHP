@@ -10,6 +10,7 @@
 
 <body>
 
+    <h1>First Tag</h1>
     <!-- FIRST TAG PHP -->
     <?= "Hello World"
     ?>
@@ -17,17 +18,68 @@
     <br>
 
     <!-- CONDITIONS AND BOOLEAN -->
+    <h1>Conditional Statement</h1>
     <?php
     $condition = true;
     $ternoryCondition = false;
-    if ($condition) {
+    if ($condition) :
         echo "This is if statememnt";
-    } else {
+    else :
         echo "This is else statememnt";
-    }
+    endif;
     echo "<br>";
     echo $ternoryCondition ? "Ternary Condition is true" : "Ternary Condition is false";
     ?>
+
+    <br>
+
+    <!-- ARRAY -->
+    <h1>Arrays</h1>
+    <?php
+    $books = ["Phy", "Chem", "Math"];
+    echo "&nbsp;";
+    echo "At Index 1 : " . $books[1] . "&nbsp";
+    ?>
+    <ol>
+        <?php
+        foreach ($books as $key => $book) {
+            echo "<li>" . $book . "</li>";
+        }
+        ?>
+    </ol>
+
+    <br>
+
+    <!-- ASSOCIATIVE ARRAY -->
+    <h1>Associative Array</h1>
+    <?php
+    $newBooks = [
+        [
+            'name' => 'Phy',
+            'author' => 'ammar',
+            'link' => 'https://ammardeveloper.000webhostapp.com/',
+        ],
+        [
+            'name' => 'Chem',
+            'author' => 'adnan',
+            'link' => 'https://ammardeveloper.000webhostapp.com/',
+        ],
+        [
+            'name' => 'Math',
+            'author' => 'zain',
+            'link' => 'https://ammardeveloper.000webhostapp.com/',
+        ]
+    ];
+    ?>
+    <ul>
+        <?php foreach ($newBooks as $key => $book) : ?>
+            <li>
+                <a href="<?= $book['link'] ?>">
+                    <?= $book['name'] ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
 </body>
 
 </html>
